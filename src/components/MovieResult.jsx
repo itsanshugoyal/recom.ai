@@ -1,8 +1,8 @@
 import React from "react";
 
-function HomeResult() {
+function MovieResult() {
   return (
-    <div className="max-w-xs  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className=" max-w-sm lg:w-1/4 xl:w-1/5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       {/* movie image */}
       <a href="#">
         <img
@@ -10,9 +10,14 @@ function HomeResult() {
           src="https://m.media-amazon.com/images/M/MV5BNmQ0ODBhMjUtNDRhOC00MGQzLTk5MTAtZDliODg5NmU5MjZhXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_FMjpg_UX1000_.jpg"
           alt=""
         />
+        {/* <img
+          className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+          src="https://m.media-amazon.com/images/M/MV5BNmQ0ODBhMjUtNDRhOC00MGQzLTk5MTAtZDliODg5NmU5MjZhXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_FMjpg_UX1000_.jpg"
+          alt=""
+        /> */}
       </a>
 
-      <div className="p-3">
+      <div className="p-1">
         {/* imdb ratting */}
         <div className="flex ">
           <svg
@@ -30,15 +35,15 @@ function HomeResult() {
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Harry Potter </h5>
         </a>
         {/* movie description */}
-         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            The story begins when 11-year-old orphan Harry discovers that his parents were wizards and he starts his
-            education in magic at Hogwart's School of Witchcraft and Wizardry
-          </p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          The story begins when 11-year-old orphan Harry discovers that his parents were wizards and he starts his
+          education in magic at Hogwart's School of Witchcraft and Wizardry
+        </p>
 
         {/* any link */}
         <a
           href="#"
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800"
         >
           Trailer
           <svg
@@ -60,4 +65,4 @@ function HomeResult() {
   );
 }
 
-export default HomeResult;
+export default MovieResult;

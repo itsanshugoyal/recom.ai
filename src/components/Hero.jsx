@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hero.css";
-function Hero({ homehead, category, howto, head2, head3 }) {
+function Hero({ homehead, category, howto, head2, head3, herobg }) {
   return (
     /* <div className="container h-full m-auto px-10 py-32 ">
       <div className="heading mb-14 ">  
@@ -24,7 +24,9 @@ function Hero({ homehead, category, howto, head2, head3 }) {
       className="relative overflow-hidden bg-no-repeat bg-cover"
       style={{
         backgroundPosition: "50%",
-        backgroundImage: "url('https://mdbcdn.b-cdn.net/img/new/slides/146.webp')",
+        // backgroundImage: "url('https://mdbcdn.b-cdn.net/img/new/slides/146.webp')",
+        backgroundImage: `${ herobg }`,
+
         height: "600px",
       }}
     >

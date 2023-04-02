@@ -6,7 +6,7 @@ import "./Movies.css";
 function Movies() {
   return (
     <div className="">
-      <Hero category={"Movies"} howto={" to watch"} />
+      <Hero category={"Movies"} howto={" to watch"} herobg={"url('./img/books2.png')"} />
 
        {/* Show Result after search */}
        <MovieResult />

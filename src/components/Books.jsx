@@ -4,16 +4,10 @@ import "./Books.css";
 import Hero from "./Hero";
 function Books() {
   return (
-    <div
-      className=" bg-cover bg-center "
-      style={{
-        backgroundImage: "url('../public/img/booksbg.png')",}
-      }
-    >
-      <Hero category={"Books"} howto={" to read"} />
+    <div>
+      <Hero category={"Books"} howto={" to read"} herobg={"url('./img/books2.png')"} />
       {/* Show Result after search */}
       <BookResult />
-
     </div>
   );
 }

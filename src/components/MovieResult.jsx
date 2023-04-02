@@ -31,6 +31,10 @@ function MovieResult() {
           </svg>
           <p className="mx-2">8.4</p>
         </div>
+        {/* Genre */}
+
+        <p className="mx-2 font-medium text-left">Genre: Magical, Adventure</p>
+        {/* Title */}
         <a href="#">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">Harry Potter </h5>
         </a>

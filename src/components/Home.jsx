@@ -7,8 +7,8 @@ import PodcastResult from "./PodcastResult";
 
 function Home() {
   return (
-    <div>
-      <Hero homehead={"Bored? Get perfect Recomendation and"} category={" your Interest "} howto={"to watch!"} />
+    <div  >
+      <Hero homehead={"Bored? Get perfect Recomendation and"} category={" your Interest "} howto={"to watch!"} herobg={"url('./img/books2.png')"} />
       {/* Result displayed after search */}
       <h1 className="font-medium text-3xl  left-0 text-left mt-5 mx-8 mb-10 underline">Movies/Webseries</h1>
       <div className="container flex-wrap flex justify-around max-w-full ">

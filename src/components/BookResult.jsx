@@ -1,6 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function BookResult() {
+function BookResult({ query }) {
+  const [data, setData] = useState("");
+
+  // useEffect(() => {
+  //   fetch("https://web-production-e62e.up.railway.app/")
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         return response.json();
+  //       }
+  //       throw response;
+  //     })
+  //     .then((data) => {
+  //       setData(data);
+  //     });
+  //   //   .catch((error)=>{
+  //   // console.error("Errror fetching data:",error});
+
+  // }, []);
+  useEffect(() => {
+    // fetch data
+    const dataFetch = async () => {
+      const data = await (
+        await fetch(`https://web-production-e62e.up.railway.app/books/suggest-many?q=${query}`)
+      ).json();
+
+      // set state when the data received
+      setData(data);
+      console.log(data);
+    };
+
+    dataFetch();
+  }, [query]);
+  console.log(data);
+
+
   return (
     <div className=" max-w-sm lg:w-1/4 xl:w-1/5 m-1 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       {/* Cover    image */}
@@ -32,8 +66,8 @@ function BookResult() {
         <p className="mx-2">8.4</p>
       </div> */}
 
-      {/* Genre */}
-      <p className="mx-2 font-medium text-left">Genre: Wealth, Happiness</p>
+        {/* Genre */}
+        <p className="mx-2 font-medium text-left">Genre: Wealth, Happiness</p>
 
         {/* Title */}
         <a href="#">

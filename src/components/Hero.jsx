@@ -64,9 +64,8 @@ function Hero({ homehead, category, howto, head2, head3, herobg, moviesQuery, bo
               </h1>
             </div>
             <h3 className="font-semibold text-xl"> Discover {category} with the power of AI</h3>
-
-            <div className=" flex mx-auto justify-center my-2 text-center text-black px-6 md:px-12">
-              <form onSubmit={submit}>
+            <form onSubmit={submit}>
+              <div className=" flex mx-auto justify-center my-2 text-center text-black px-6 md:px-12">
                 <input
                   type="text"
                   name="searchQuery"
@@ -80,8 +79,8 @@ function Hero({ homehead, category, howto, head2, head3, herobg, moviesQuery, bo
                 >
                   Get Recomendation
                 </button>
-              </form>
-            </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

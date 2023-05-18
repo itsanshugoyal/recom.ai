@@ -6,7 +6,7 @@ function MovieResult({query}) {
 
   useEffect(() => {
     query &&
-      fetch(`http://web-production-e62e.up.railway.app/movies/suggest-many?q=${encodeURI( query )}`)
+      fetch(`https://web-production-e62e.up.railway.app/movies/suggest-many?q=${encodeURI( query )}`)
         .then((response) => {
           return response.json();
         })

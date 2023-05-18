@@ -1,13 +1,12 @@
 import React from "react";
 import "./Hero.css";
 import { useLocation } from "react-router-dom";
-function Hero({ homehead, category, howto, head2, head3, herobg, moviesQuery, booksQuery, podcastsQuery }) {
+function Hero({ homehead, category, howto, head2, head3, herobg, moviesQuery, booksQuery, podcastsQuery,homeQuery }) {
   const location = useLocation();
 
   function submit(e) {
     e.preventDefault();
     const q = e.target.searchQuery.value;
-    console.log(q);
     if (location.pathname === "/books") {
       booksQuery(q);
     } else if (location.pathname === "/movies") {
@@ -15,9 +14,9 @@ function Hero({ homehead, category, howto, head2, head3, herobg, moviesQuery, bo
     } else if (location.pathname === "/podcasts") {
       podcastsQuery(q);
     } else if (location.pathname === "/") {
-      booksQuery(q);
-      moviesQuery(q);
-      podcastsQuery(q);
+      homeQuery(q);
+      
+      
     }
   }
 
@@ -55,7 +54,7 @@ function Hero({ homehead, category, howto, head2, head3, herobg, moviesQuery, bo
         style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}
       >
         <div className="flex justify-center items-center h-full">
-          <div className="text-center text-white px-6 md:px-12">
+          <div className="text-center text-white px-6 md:px-12 w-11/12">
             <div className="mb-12">
               <h1 className="text-5xl md:text-6xl xl:text-6xl font-bold tracking-tight">{homehead}</h1>
               <h1 className="text-5xl md:text-6xl xl:text-6xl font-bold tracking-tight ">
@@ -65,11 +64,11 @@ function Hero({ homehead, category, howto, head2, head3, herobg, moviesQuery, bo
             </div>
             <h3 className="font-semibold text-xl"> Discover {category} with the power of AI</h3>
             <form onSubmit={submit}>
-              <div className=" flex mx-auto justify-center my-2 text-center text-black px-6 md:px-12">
+              <div className="flex mx-auto justify-center my-2 text-center text-black px-6 md:px-12">
                 <input
                   type="text"
                   name="searchQuery"
-                  className="border-2 border-sky-500 px-5  md:w-3/6 rounded"
+                  className="border-2 border-sky-500 px-5  md:w-3/6 xl:w-3/6 rounded w"
                 ></input>
                 <button
                   type="submit"

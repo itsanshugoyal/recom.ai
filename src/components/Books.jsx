@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import BookResult from "./BookResult";
-import "./Books.css";
 import Hero from "./Hero";
 function Books() {
   const [query, setQuery] = useState("");

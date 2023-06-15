@@ -1,10 +1,7 @@
-import React from 'react'
-import "./Nopage.css"
+import React from "react";
 
 function Nopage() {
-  return (
-    <div>Nopage</div>
-  )
+  return <div>Nopage</div>;
 }
 
-export default Nopage
+export default Nopage;

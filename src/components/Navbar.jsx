@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Navbar.css";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -7,7 +6,6 @@ function Navbar() {
   const showMenu = () => {
     setActive(!isActive);
   };
-  
 
   return (
     <div>
@@ -20,27 +18,28 @@ function Navbar() {
                 {/* <!-- Website Logo --> */}
                 <Link to="/" className="flex items-center py-4 px-2">
                   <img src="logo.png" alt="Logo" className="h-8 w-8 mr-2" />
-                  <span className="font-semibold text-gray-500 text-lg ">Recom.ai</span>
+                  <span className="font-semibold text-gray-800 text-lg ">Recom.ai</span>
                 </Link>
               </div>
               {/* <!-- Primary Navbar items --> */}
               <div className="hidden md:flex items-center space-x-1">
                 {/* <a href="/" className="py-4 px-2 text-sky-900 border-b-4 border-sky-900 font-semibold ">Home</a> */}
                 <Link
-                  to="/movies" aria-current="page"
-                  className="  py-4 px-2 text-gray-500 font-semibold hover:text-sky-900 transition duration-300"
+                  to="/movies"
+                  aria-current="page"
+                  className="  py-4 px-2 text-gray-800 font-semibold hover:text-sky-900 transition duration-300"
                 >
                   Movies/Webseries
                 </Link>
                 <Link
                   to="/books"
-                  className="py-4 px-2 text-gray-500 font-semibold hover:text-sky-900 transition duration-300"
+                  className="py-4 px-2 text-gray-800 font-semibold hover:text-sky-900 transition duration-300"
                 >
                   Books
                 </Link>
                 <Link
                   to="/podcasts"
-                  className="py-4 px-2 text-gray-500 font-semibold hover:text-sky-900 transition duration-300"
+                  className="py-4 px-2 text-gray-800 font-semibold hover:text-sky-900 transition duration-300"
                 >
                   Podcast/Music
                 </Link>
@@ -50,7 +49,7 @@ function Navbar() {
             <div className="hidden md:flex items-center space-x-3 ">
               <Link
                 to="/newsletter"
-                className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-sky-900 hover:text-white transition duration-300"
+                className="py-2 px-2 font-medium text-gray-800 rounded hover:bg-sky-900 hover:text-white transition duration-300"
               >
                 Newsletter
               </Link>
@@ -65,7 +64,7 @@ function Navbar() {
             <div className="md:hidden flex items-center">
               <button className="outline-none mobile-menu-button" onClick={showMenu}>
                 <svg
-                  className=" w-6 h-6 text-gray-500 hover:text-sky-900 "
+                  className=" w-6 h-6 text-gray-800 hover:text-sky-900 "
                   x-show="!showMenu"
                   fill="none"
                   strokeLinecap="round"

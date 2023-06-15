@@ -1,7 +1,6 @@
 import React from "react";
-import "./Hero.css";
 import { useLocation } from "react-router-dom";
-function Hero({ homehead, category, howto, head2, head3, herobg, moviesQuery, booksQuery, podcastsQuery,homeQuery }) {
+function Hero({ homehead, category, howto, head2, head3, herobg, moviesQuery, booksQuery, podcastsQuery, homeQuery }) {
   const location = useLocation();
 
   function submit(e) {
@@ -15,8 +14,6 @@ function Hero({ homehead, category, howto, head2, head3, herobg, moviesQuery, bo
       podcastsQuery(q);
     } else if (location.pathname === "/") {
       homeQuery(q);
-      
-      
     }
   }
 

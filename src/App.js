@@ -1,4 +1,3 @@
-import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Movies from "./components/Movies";
@@ -12,13 +11,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App text-center justify-center h-full align-middle" style={{backgroundColor:"#EEF0F2",}}>
+      <div className="App text-center justify-center h-full align-middle " style={{ backgroundColor: "#EEF0F2" }}>
         <Navbar />
         <Routes>
-          <Route
-            path="/"
-            element={<Home  />}
-          />
+          <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/books" element={<Books />} />
           <Route path="/podcasts" element={<Podcasts />} />

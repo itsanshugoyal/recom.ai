@@ -17,9 +17,9 @@ function Home() {
         homeQuery={setQuery}
       />
       {/* Result displayed after search */}
-      {query && <h1 className="font-medium text-3xl  left-0 text-left mt-5 mx-8 mb-10 underline">Movies/Webseries</h1>}
+      {query && <h1 className="font-bold text-5xl  left-0 text-left mt-5 mx-8 mb-10 ">Movies/Webseries</h1>}
       <MovieResult query={query} />
-      {query && <h1 className="font-medium text-3xl  left-0 text-left mt-5 mx-8 mb-10 underline">Books</h1>}{" "}
+      {query && <h1 className="font-bold text-5xl  left-0 text-left mt-5 mx-8 mb-10 ">Books</h1>}
       <BookResult query={query} />
       {/* {query && <h1 className="font-medium text-3xl  left-0 text-left mt-5 mx-8 mb-10 underline">Podcasts</h1>}{" "}
       <PodcastResult query={query} /> */}

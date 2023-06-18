@@ -11,7 +11,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App text-center justify-center h-full align-middle " style={{ backgroundColor: "#EEF0F2" }}>
+      <div className="App h-screen text-center justify-center  align-middle " style={{ backgroundColor: "#EEF0F2" }}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

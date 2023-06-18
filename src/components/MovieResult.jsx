@@ -120,11 +120,11 @@ function MovieResult({ query }) {
   // ];
 
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {data.length > 0 &&
-            data.map((moviedata) => {
+    <div>
+      {data.length > 0 && (
+        <div className="bg-white mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            {data.map((moviedata) => {
               return (
                 <MovieItem
                   key={moviedata.id}
@@ -138,25 +138,9 @@ function MovieResult({ query }) {
                 />
               );
             })}
+          </div>
         </div>
-      </div>
-
-      {/* <div className="container flex-wrap flex justify-around max-w-full ">
-        {data.length > 0 &&
-          data.map((moviedata) => {
-            return (
-              <MovieItem
-                key={moviedata.id}
-                title={moviedata.title}
-                genre={moviedata.genre_names.toString()}
-                poster_url={moviedata.poster_url}
-                trailer_url={moviedata.trailer_url}
-                vote_average={moviedata.vote_average}
-                overview={moviedata.overview}
-              />
-            );
-          })}
-      </div> */}
+      )}
     </div>
   );
 }

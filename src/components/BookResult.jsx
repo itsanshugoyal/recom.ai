@@ -4,21 +4,15 @@ import BookItem from "./BookItem";
 function BookResult({ query }) {
   const [data, setData] = useState([]);
 
-  const ServicesRef = useRef(null);
+  const ref = useRef(null);
 
-  const gotoServices = () =>
-    window.scrollTo({
-      top: ServicesRef.current.offsetTop,
-      behavior: "smooth",
-      forwardRef: true,
-      // You can also assign value "auto"
-      // to the behavior parameter.
-    });
+  const scrollToElement = () => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
-  const refContainer = useRef(null);
-  // useEffect(() => {
-  //   refContainer.current.scrollIntoView({ behavior: "smooth" });
-  // });
+  useEffect(() => {
+    scrollToElement();
+  }, [data]);
 
   useEffect(() => {
     query &&
@@ -28,25 +22,15 @@ function BookResult({ query }) {
         })
         .then((data) => {
           setData(data);
-          refContainer.current.scrollIntoView({ behavior: "smooth" });
         });
-  }, [query, refContainer]);
+  }, [query]);
   console.log(data);
-
-  /* 
-  const testRef = useRef(null);
-  const scrollToElement = () => testRef.current.scrollIntoView({ behavior: "smooth" });
-  useEffect(() => {
-    if (testRef.current) {
-      testRef.current.scrollIntoView();
-    }
-  }, [query]); */
 
   return (
     <div>
       {data.length > 0 && (
-        <div className="bg-white mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <div className="bg-white mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8" ref={ref}>
+          <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 xl:gap-x-8">
             {data.map((bookdata) => {
               return (
                 <BookItem
@@ -57,7 +41,6 @@ function BookResult({ query }) {
                   external_link={bookdata.preview_url}
                   overview={bookdata.description}
                   rating={bookdata.rating}
-                  ref={refContainer}
                 />
               );
             })}

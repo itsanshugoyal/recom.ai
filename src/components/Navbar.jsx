@@ -17,8 +17,12 @@ function Navbar() {
               <div>
                 {/* <!-- Website Logo --> */}
                 <Link to="/" className="flex items-center py-4 px-2">
-                  <img src="logo.png" alt="Logo" className="h-8 w-8 mr-2" />
-                  <span className="font-semibold text-gray-800 text-lg ">Recom.ai</span>
+                  {/* <img
+                    src="./img/logo.png"
+                    alt=""
+                    className="left-8 top-0 overflow-hidden h-fit w-40 mr-2 bg-cover absolute bg-no-repeat"
+                  /> */}
+                  <span className="font-extrabold text-gray-800 text-xl ">Recom.ai</span>
                 </Link>
               </div>
               {/* <!-- Primary Navbar items --> */}

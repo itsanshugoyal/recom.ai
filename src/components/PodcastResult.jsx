@@ -1,8 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PodcastItem from "./PodcastItem";
 
 function PodcastResult({ query }) {
   const [data, setData] = useState([]);
+
+  const ref = useRef(null);
+
+  const scrollToElement = () => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToElement();
+  }, [data]);
 
   useEffect(() => {
     query &&
@@ -19,7 +29,7 @@ function PodcastResult({ query }) {
   return (
     <div>
       {data.length > 0 && (
-        <div className="bg-white mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <div className="bg-white mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8" ref={ref}>
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {data.map((podcastdata) => {
               return (

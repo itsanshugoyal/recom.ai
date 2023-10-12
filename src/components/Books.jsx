@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import BookResult from "./BookResult";
 import Hero from "./Hero";
-import BlogContainer from "./BlogContainer";
+import BlogResult from "./BlogResult";
 function Books() {
   const [query, setQuery] = useState("");
 
@@ -13,7 +13,7 @@ function Books() {
       <BookResult query={query} />
 
       {/* show books blog */}
-      <BlogContainer type={"book"} />
+      <BlogResult type={"book"} />
     </div>
   );
 }

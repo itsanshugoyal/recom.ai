@@ -30,6 +30,8 @@ function BookResult({ query }) {
     <div>
       {data.length > 0 && (
         <div className="bg-white mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8" ref={ref}>
+          <h1 className="font-bold text-5xl  left-0 text-left mt-5 mx-8 mb-10   ">Wise-picks</h1>
+
           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 xl:gap-x-8">
             {data.map((bookdata) => {
               return (

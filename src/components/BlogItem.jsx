@@ -6,13 +6,13 @@ function BlogItem({ key, type, title, cover_image, creation_date, description })
     <div>
       <Link to={`/blogpage`}>
         {/* <Link to={`/blog/${encodeURI(blog)}`}> */}
-        <div className="group relative shadow-xl rounded-md pb-4 bg-white">
+        <div className="group relative shadow-xl rounded-lg pb-4 bg-white">
           {/*1 image */}
-          <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden   bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-52">
+          <div className="p-3 aspect-h-1 aspect-w-1 w-full overflow-hidden bg-slate-50 lg:aspect-none group-hover:opacity-75 lg:h-52">
             <img
               src={cover_image}
               alt={title}
-              className="h-full w-full object-fill object-center lg:h-full lg:w-full"
+              className="h-full w-full object-fill object-center lg:h-full lg:w-full rounded-sm"
             />
           </div>
 
@@ -32,7 +32,7 @@ function BlogItem({ key, type, title, cover_image, creation_date, description })
               </span>
             </h3>
             {/* description */}
-            <p aria-hidden="true" className=" mt-1 text-base  text-gray-500 line-clamp-3 h-20 overflow-hidden p-2 ">
+            <p aria-hidden="true" className=" mt-1 text-base  text-gray-500 line-clamp-3 h-24 overflow-hidden p-2 ">
               {description}
             </p>
           </div>

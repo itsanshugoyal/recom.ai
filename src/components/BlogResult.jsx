@@ -1,7 +1,7 @@
 import React from "react";
 import BlogItem from "./BlogItem";
 //backdrop-blur-md
-function BlogContainer({ type }) {
+function BlogResult({ type }) {
   const data = [
     {
       id: 1,
@@ -32,7 +32,7 @@ function BlogContainer({ type }) {
     <div className="bg-[#EEF0F2] ">
       {filteredData.length > 0 && (
         <div className=" mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h1 className="font-bold text-5xl  left-0 text-left mt-5 mx-8 mb-10   ">Wise-picks</h1>
+          <h1 className="font-bold text-5xl  left-0 text-left mt-5 mx-8 mb-10   ">Wise-recoms</h1>
 
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
             {filteredData.map((blogdata) => {
@@ -41,7 +41,7 @@ function BlogContainer({ type }) {
                   key={blogdata.id}
                   type={blogdata.type}
                   title={blogdata.title}
-                  cover_image={""}
+                  cover_image={"https://mdbcdn.b-cdn.net/img/new/slides/146.webp"}
                   description={blogdata.description}
                   creation_date={blogdata.creation_date}
                 />
@@ -54,4 +54,4 @@ function BlogContainer({ type }) {
   );
 }
 
-export default BlogContainer;
+export default BlogResult;

@@ -3,7 +3,7 @@ import BookResult from "./BookResult";
 import Hero from "./Hero";
 import MovieResult from "./MovieResult";
 import PodcastResult from "./PodcastResult";
-import BlogContainer from "./BlogContainer";
+import BlogResult from "./BlogResult";
 
 function Home() {
   const [query, setQuery] = useState("");
@@ -26,7 +26,7 @@ function Home() {
       <PodcastResult query={query} /> */}
 
       {/* blog of all categories */}
-      <BlogContainer />
+      <BlogResult />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import BookResult from "./BookResult";
 import Hero from "./Hero";
 import MovieResult from "./MovieResult";
 import PodcastResult from "./PodcastResult";
+import BlogContainer from "./BlogContainer";
 
 function Home() {
   const [query, setQuery] = useState("");
@@ -23,6 +24,9 @@ function Home() {
       <BookResult query={query} />
       {/* {query && <h1 className="font-medium text-3xl  left-0 text-left mt-5 mx-8 mb-10 underline">Podcasts</h1>}{" "}
       <PodcastResult query={query} /> */}
+
+      {/* blog of all categories */}
+      <BlogContainer />
     </div>
   );
 }

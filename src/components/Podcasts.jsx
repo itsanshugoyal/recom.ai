@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Hero from "./Hero";
 import PodcastResult from "./PodcastResult";
+import BlogContainer from "./BlogContainer";
 function Podcasts() {
   const [query, setQuery] = useState("");
 
@@ -10,6 +11,9 @@ function Podcasts() {
 
       {/* Show Result after search */}
       <PodcastResult query={query} />
+
+      {/* show podcasts blog */}
+      <BlogContainer type={"podcast"} />
     </div>
   );
 }

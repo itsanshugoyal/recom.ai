@@ -7,6 +7,7 @@ import Nopage from "./components/Nopage";
 
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Blogpage from "./components/Blogpage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/movies" element={<Movies />} />
           <Route path="/books" element={<Books />} />
           <Route path="/podcasts" element={<Podcasts />} />
+          <Route path="/blogpage" element={<Blogpage />} />
           <Route path="*" element={<Nopage />} />
         </Routes>
         {/* <Footer /> */}

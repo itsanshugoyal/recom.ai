@@ -18,24 +18,6 @@ function Hero({ homehead, category, howto, head2, head3, herobg, moviesQuery, bo
   }
 
   return (
-    /* <div className="container h-full m-auto px-10 py-32 ">
-      <div className="heading mb-14 ">  
-         <h1 className=" font-bold text-6xl mb-1">{homehead} </h1>
-
-        <h1 className=" font-bold text-6xl mb-2">
-          Find <span className="text-sky-900">{category}</span>
-          {howto}
-        </h1>
-        <h2 className=" font-bold text-2xl ">{head2}</h2>
-      </div>
-      <h3 className="font-semibold text-2xl"> Discover {category} with the power of AI</h3>
-
-      <div className=" flex mx-auto justify-center my-3">
-        <input type="text" className="border-2 border-sky-500 p-2 md:w-2/6"></input>
-        <button className="border-2 bg-sky-700 mx-3 rounded-md p-2 md:w-2/12">Get Recommendation</button>
-      </div>
-    </div> */
-
     <div
       className="relative h-screen overflow-hidden bg-no-repeat bg-cover"
       style={{
@@ -53,8 +35,8 @@ function Hero({ homehead, category, howto, head2, head3, herobg, moviesQuery, bo
         <div className="flex justify-center items-center h-full">
           <div className="text-center text-white px-6 md:px-12 sm:w-11/12 w-full">
             <div className="mb-12">
-              <h1 className="text-4xl md:text-6xl xl:text-6xl font-bold tracking-tight">{homehead}</h1>
-              <h1 className="text-4xl md:text-6xl xl:text-6xl font-bold tracking-tight ">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">{homehead}</h1>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight ">
                 Find <span className="text-sky-900">{category}</span>
                 {howto}
               </h1>

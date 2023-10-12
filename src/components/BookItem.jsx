@@ -3,7 +3,7 @@ import React from "react";
 function BookItem({ cover_image, author, title, external_link, overview, rating }) {
   return (
     <div>
-      <div className="group relative">
+      <div className="group relative shadow-inner rounded-lg">
         {/*1 image */}
         <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
           <img src={cover_image} alt={title} className="h-full w-full object-fill object-center lg:h-full lg:w-full" />
@@ -57,7 +57,7 @@ function BookItem({ cover_image, author, title, external_link, overview, rating 
         </div>
         {/* Overlay card */}
         <div className="hidden group-hover:block absolute top-0 left-1/4 z-50 w-full">
-          <div className="flex flex-col gap-3 items-start bg-white rounded-xl px-4 py-3 shadow-md w-full">
+          <div className="flex flex-col gap-3 items-start bg-white/90 rounded-xl px-4 py-3 shadow-md w-full">
             <div className="flex items-start w-full mb-3">
               {/* image */}
 

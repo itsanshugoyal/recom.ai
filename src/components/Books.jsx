@@ -30,7 +30,7 @@ function Books() {
         </Suspense>
       </div>
       {/* show books blog */}
-      {/* <BlogResult type={"book"} /> */}
+      <BlogResult type={"book"} />
     </div>
   );
 }

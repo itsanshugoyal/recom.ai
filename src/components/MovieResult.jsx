@@ -1,29 +1,50 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import MovieItem from "./MovieItem";
 
 function MovieResult({ query }) {
   const [data, setData] = useState([]);
-  const ref = useRef(null);
-
-  const scrollToElement = () => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  useEffect(() => {
-    scrollToElement();
-  }, [data]);
 
   useEffect(() => {
     query &&
       fetch(`https://web-production-e62e.up.railway.app/movies/suggest-many?q=${encodeURI(query)}`)
-        .then((response) => {
-          return response.json();
+        .then((response) => response.json())
+        .then((data) => {
+          localStorage.setItem("movieData", JSON.stringify(data));
+          return data; // Ensure this line returns a promise
         })
         .then((data) => {
           setData(data);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
         });
+
+    // const fetchData = async () => {
+    //   if (query) {
+    //     try {
+    //       const response = await fetch(
+    //         `https://web-production-e62e.up.railway.app/movies/suggest-many?q=${encodeURI(query)}`
+    //       );
+    //       const result = await response.json();
+    //       setData(result);
+    //       // Store the data in local storage
+    //       localStorage.setItem("movieData", JSON.stringify(result));
+    //     } catch (error) {
+    //       console.error("Error fetching data:", error);
+    //     }
+    //   }
+    // };
+
+    // fetchData();
   }, [query]);
-  console.log(data);
+
+  // Load data from local storage on component mount
+  useEffect(() => {
+    const storedData = localStorage.getItem("movieData");
+    if (storedData) {
+      setData(JSON.parse(storedData));
+    }
+  }, []);
 
   // const data = [
   //   {
@@ -127,15 +148,15 @@ function MovieResult({ query }) {
   //     vote_count: 15783,
   //   },
   // ];
-  const dataCached = data;
+  // console.log(data);
   return (
     <div>
-      {dataCached.length > 0 && (
-        <div className="bg-white mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8" ref={ref}>
-          <h1 className="font-bold text-5xl  left-0 text-left mt-5 mx-8 mb-10   ">Wise-picks</h1>
+      {data.length > 0 && (
+        <div className="bg-white mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+          <h1 className="font-bold text-5xl  left-0 text-left mx-2 mb-14">Movie-wisePicks</h1>
 
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {dataCached.map((moviedata) => {
+            {data.map((moviedata) => {
               return (
                 <MovieItem
                   key={moviedata.id}

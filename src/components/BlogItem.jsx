@@ -32,7 +32,7 @@ function BlogItem({ key, type, title, cover_image, creation_date, description })
               </span>
             </h3>
             {/* description */}
-            <p aria-hidden="true" className=" mt-1 text-base  text-gray-500 line-clamp-3 h-24 overflow-hidden p-2 ">
+            <p aria-hidden="true" className=" mt-1 text-base  text-gray-500 line-clamp-3 h-20 overflow-hidden p-2 ">
               {description}
             </p>
           </div>

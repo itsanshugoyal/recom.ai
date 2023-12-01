@@ -1,10 +1,24 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-function Hero({ homehead, category, howto, head2, head3, herobg, moviesQuery, booksQuery, podcastsQuery, homeQuery }) {
+function Hero({
+  homehead,
+  category,
+  howto,
+  head2,
+  head3,
+  herobg,
+  moviesQuery,
+  booksQuery,
+  podcastsQuery,
+  homeQuery,
+  scrollToResult,
+}) {
   const location = useLocation();
 
   function submit(e) {
     e.preventDefault();
+    scrollToResult();
+
     const q = e.target.searchQuery.value;
     if (location.pathname === "/books") {
       booksQuery(q);
@@ -55,6 +69,7 @@ function Hero({ homehead, category, howto, head2, head3, herobg, moviesQuery, bo
                   className="mb-2 max-sm:py-2 sm:py-4 sm:px-7 sm:mx-3 max-sm:w-1/2 border-2 border-sky-300 font-medium text-sm leading-snug uppercase rounded hover:bg-sky-900 hover:bg-opacity-25 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="light"
+                  // onClick={scrollToResult}
                 >
                   Get Recomendation
                 </button>

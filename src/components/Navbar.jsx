@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
-  const [isActive, setActive] = useState("false");
+  const [isActive, setActive] = useState(false);
   const showMenu = () => {
     setActive(!isActive);
   };
@@ -14,55 +14,80 @@ function Navbar() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between">
             <div className="flex space-x-7">
-              <div>
+              <div className="items-center justify-center flex">
                 {/* <!-- Website Logo --> */}
-                <Link to="/" className="flex items-center py-4 px-2">
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    "py-4 px-2   text-gray-800 text-xl   hover:text-blue-900 " +
+                    (isActive ? "font-extrabold " : "font-bold")
+                  }
+                >
                   {/* <img
                     src="./img/logo.png"
                     alt=""
                     className="left-8 top-0 overflow-hidden h-fit w-40 mr-2 bg-cover absolute bg-no-repeat"
                   /> */}
-                  <span className="font-extrabold text-gray-800 text-xl ">Recom.ai</span>
-                </Link>
+                  Recom.ai
+                </NavLink>
               </div>
               {/* <!-- Primary Navbar items --> */}
-              <div className="hidden md:flex items-center space-x-1">
+              <div className="hidden md:flex items-center space-x-1 ">
                 {/* <a href="/" className="py-4 px-2 text-sky-900 border-b-4 border-sky-900 font-semibold ">Home</a> */}
-                <Link
-                  to="/movies"
-                  aria-current="page"
-                  className="  py-4 px-2 text-gray-800 font-semibold hover:text-sky-900 transition duration-300"
-                >
-                  Movies/Webseries
-                </Link>
-                <Link
+                <div>
+                  <i className="fi fi-rr-camera-movie"></i>
+                  <NavLink
+                    to="/movies"
+                    aria-current="page"
+                    className={({ isActive }) =>
+                      "py-4 px-2 text-gray-800 hover:text-sky-900  transition duration-300 " +
+                      (isActive ? "font-bold" : "font-semibold")
+                    }
+                  >
+                    Movies/Webseries
+                  </NavLink>
+                </div>
+
+                <NavLink
                   to="/books"
-                  className="py-4 px-2 text-gray-800 font-semibold hover:text-sky-900 transition duration-300"
+                  className={({ isActive }) =>
+                    "py-4 px-2 text-gray-800 hover:text-sky-900  transition duration-300 " +
+                    (isActive ? "font-bold" : "font-semibold")
+                  }
                 >
                   Books
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/podcasts"
-                  className="py-4 px-2 text-gray-800 font-semibold hover:text-sky-900 transition duration-300"
+                  className={({ isActive }) =>
+                    "py-4 px-2 text-gray-800 hover:text-sky-900  transition duration-300 " +
+                    (isActive ? "font-bold" : "font-semibold")
+                  }
                 >
                   Podcast/Music
-                </Link>
+                </NavLink>
               </div>
             </div>
             {/* <!-- Secondary Navbar items --> */}
             <div className="hidden md:flex items-center space-x-3 ">
-              <Link
+              <NavLink
                 to="/newsletter"
-                className="py-2 px-2 font-medium text-gray-800 rounded hover:bg-sky-900 hover:text-white transition duration-300"
+                className={({ isActive }) =>
+                  "py-2 px-2  text-gray-800 rounded hover:bg-sky-900 hover:text-white transition duration-300 " +
+                  (isActive ? "font-semibold" : "font-medium")
+                }
               >
                 Newsletter
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 to="/feedback"
-                className="py-2 px-2 font-medium text-white bg-sky-900 rounded hover:bg-sky-700 transition duration-300"
+                className={({ isActive }) =>
+                  "py-2 px-2  text-gray-800 rounded hover:bg-sky-900 hover:text-white transition duration-300 " +
+                  (isActive ? "font-semibold" : "font-medium")
+                }
               >
                 Feedback
-              </Link>
+              </NavLink>
             </div>
             {/* <!-- Mobile menu button --> */}
             <div className="md:hidden flex items-center">
@@ -84,22 +109,22 @@ function Navbar() {
           </div>
         </div>
         {/* <!-- mobile menu --> */}
-        <div className={isActive ? "hidden" : "null"}>
+        <div className={isActive ? "" : "hidden"}>
           <ul className="">
             <li className="active">
-              <Link to="/movies" className="block text-sm px-2 py-4 hover:bg-sky-900 font-semibold">
+              <NavLink to="/movies" className="block text-sm px-2 py-4 hover:bg-sky-900 font-semibold">
                 Movies/Webseries
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/books" className="block text-sm px-2 py-4 hover:bg-sky-900 transition duration-300">
+              <NavLink to="/books" className="block text-sm px-2 py-4 hover:bg-sky-900 transition duration-300">
                 Books
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/podcasts" className="block text-sm px-2 py-4 hover:bg-sky-900 transition duration-300">
+              <NavLink to="/podcasts" className="block text-sm px-2 py-4 hover:bg-sky-900 transition duration-300">
                 Podcast/Music
-              </Link>
+              </NavLink>
             </li>
             <li>
               <a href="#contact" className="block text-sm px-2 py-4 hover:bg-sky-900 transition duration-300">

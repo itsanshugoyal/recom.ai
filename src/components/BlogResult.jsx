@@ -1,32 +1,24 @@
-import React from "react";
-import BlogItem from "./BlogItem";
+import React, { useEffect, useState } from "react";
+import { BlogItem } from "../components";
+import { getPosts } from "../services";
 //backdrop-blur-md
+
 function BlogResult({ type }) {
-  const data = [
-    {
-      id: 1,
-      type: "movie",
-      title: "the greatest movies of all time",
-      description: "here are the list of the movies which are greatest of all time",
-      creation_date: "2023-08-25",
-    },
-    {
-      id: 2,
-      type: "movie",
-      title: "lorem siposhof iauef asndf  awek flaksudfhwe ailuefhw e fdvhjsdtvg uifksd cjkhcuiweyfu kctufe ",
-      description:
-        "here are the list of the movies which are greatest of all timehere are the list of the movies which are greatest of all timehere are the list of the movies which are greatest of all time",
-      creation_date: "2023-08-25",
-    },
-    {
-      id: 3,
-      type: "book",
-      title: "the greatest books of all time",
-      description: "here are the list of the books which are greatest of all time",
-      creation_date: "2023-08-25",
-    },
-  ];
-  const filteredData = type ? data.filter((item) => item.type === type) : data;
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getPosts();
+        setPosts(response);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  const filteredData = type ? posts.filter((item) => item.node.categories[0].name === type) : posts;
 
   return (
     <div className="bg-[#EEF0F2] ">
@@ -36,16 +28,7 @@ function BlogResult({ type }) {
 
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
             {filteredData.map((blogdata) => {
-              return (
-                <BlogItem
-                  key={blogdata.id}
-                  type={blogdata.type}
-                  title={blogdata.title}
-                  cover_image={"https://mdbcdn.b-cdn.net/img/new/slides/146.webp"}
-                  description={blogdata.description}
-                  creation_date={blogdata.creation_date}
-                />
-              );
+              return <BlogItem key={blogdata.node.title} post={blogdata.node} />;
             })}
           </div>
         </div>

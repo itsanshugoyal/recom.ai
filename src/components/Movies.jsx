@@ -1,17 +1,12 @@
 import React, { useState, Suspense, useRef } from "react";
-import Hero from "./Hero";
-import MovieResult from "./MovieResult";
-import BlogResult from "./BlogResult";
-import Loader from "./Loader";
+import { Hero, MovieResult, BlogResult, Loader } from "../components";
 
-function Movies() {
+const Movies = () => {
   const [query, setQuery] = useState("");
+  const movieResultRef = useRef(null);
 
   const handleClickScroll = () => {
-    const element = document.getElementById("movieResult");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    movieResultRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -25,7 +20,7 @@ function Movies() {
       />
 
       {/* Show Result after search */}
-      <div id="movieResult">
+      <div ref={movieResultRef}>
         <Suspense fallback={<Loader />}>
           <MovieResult query={query} />
         </Suspense>
@@ -34,9 +29,9 @@ function Movies() {
       {/* 2nd page */}
       {/* movies blog */}
 
-      <BlogResult type={"movie"} />
+      <BlogResult type={"Movies"} />
     </div>
   );
-}
+};
 
 export default Movies;

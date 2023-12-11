@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MovieItem from "./MovieItem";
-import BookItem from "./BookItem";
+import { MovieItem, BookItem } from "../components";
 
 function HomeResult({ query }) {
   const [moviesdata, setMoviesData] = useState([]);
@@ -10,14 +9,6 @@ function HomeResult({ query }) {
     const fetchData = async () => {
       if (query) {
         try {
-          await Promise.resolve(
-            new Promise((resolve) => {
-              setTimeout(() => {
-                console.log("waiting");
-                resolve(); // Resolve the Promise after the timeout
-              }, 50000);
-            })
-          );
           const movieResponse = await fetch(
             `https://web-production-e62e.up.railway.app/movies/suggest-many?q=${encodeURI(query)}`
           );
@@ -64,18 +55,7 @@ function HomeResult({ query }) {
 
             <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
               {moviesdata.map((moviedata) => {
-                return (
-                  <MovieItem
-                    key={moviedata.id}
-                    title={moviedata.title}
-                    genre={moviedata.genre_names.toString()}
-                    cover_image={moviedata.poster_url}
-                    external_link={moviedata.trailer_url}
-                    rating={moviedata.vote_average}
-                    overview={moviedata.overview}
-                    release_date={moviedata.release_date}
-                  />
-                );
+                return <MovieItem key={moviedata.id} data={moviedata} />;
               })}
             </div>
           </div>
@@ -90,17 +70,7 @@ function HomeResult({ query }) {
 
             <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 xl:gap-x-8">
               {booksdata.map((bookdata) => {
-                return (
-                  <BookItem
-                    key={bookdata.id}
-                    title={bookdata.title}
-                    author={bookdata.author}
-                    cover_image={bookdata.cover_image_url}
-                    external_link={bookdata.preview_url}
-                    overview={bookdata.description}
-                    rating={bookdata.rating}
-                  />
-                );
+                return <BookItem key={bookdata.id} data={bookdata} />;
               })}
             </div>
           </div>

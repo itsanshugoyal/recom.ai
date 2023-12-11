@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import Loader from "./Loader";
+import { Loader } from "../components";
 
 function Nopage() {
   return (

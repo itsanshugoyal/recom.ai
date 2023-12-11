@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import BookItem from "./BookItem";
+import { BookItem } from "../components";
 
 function BookResult({ query }) {
   const [data, setData] = useState([]);
@@ -40,17 +40,7 @@ function BookResult({ query }) {
 
           <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 xl:gap-x-8">
             {data.map((bookdata) => {
-              return (
-                <BookItem
-                  key={bookdata.id}
-                  title={bookdata.title}
-                  author={bookdata.author}
-                  cover_image={bookdata.cover_image_url}
-                  external_link={bookdata.preview_url}
-                  overview={bookdata.description}
-                  rating={bookdata.rating}
-                />
-              );
+              return <BookItem data={bookdata} key={bookdata.id} />;
             })}
           </div>
         </div>

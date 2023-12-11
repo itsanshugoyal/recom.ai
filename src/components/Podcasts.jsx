@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Hero from "./Hero";
-import PodcastResult from "./PodcastResult";
-import BlogResult from "./BlogResult";
+import { Hero, PodcastResult, BlogResult } from "../components";
+
 function Podcasts() {
   const [query, setQuery] = useState("");
 
@@ -13,7 +12,7 @@ function Podcasts() {
       <PodcastResult query={query} />
 
       {/* show podcasts blog */}
-      <BlogResult type={"podcast"} />
+      <BlogResult type={"Podcasts"} />
     </div>
   );
 }

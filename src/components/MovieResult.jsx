@@ -1,41 +1,27 @@
 import React, { useEffect, useState } from "react";
-import MovieItem from "./MovieItem";
+import { MovieItem } from "../components";
 
 function MovieResult({ query }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    query &&
-      fetch(`https://web-production-e62e.up.railway.app/movies/suggest-many?q=${encodeURI(query)}`)
-        .then((response) => response.json())
-        .then((data) => {
-          localStorage.setItem("movieData", JSON.stringify(data));
-          return data; // Ensure this line returns a promise
-        })
-        .then((data) => {
-          setData(data);
-        })
-        .catch((error) => {
+    const fetchData = async () => {
+      if (query) {
+        try {
+          const response = await fetch(
+            `https://web-production-e62e.up.railway.app/movies/suggest-many?q=${encodeURI(query)}`
+          );
+          const result = await response.json();
+          setData(result);
+          // Store the data in local storage
+          localStorage.setItem("movieData", JSON.stringify(result));
+        } catch (error) {
           console.error("Error fetching data:", error);
-        });
+        }
+      }
+    };
 
-    // const fetchData = async () => {
-    //   if (query) {
-    //     try {
-    //       const response = await fetch(
-    //         `https://web-production-e62e.up.railway.app/movies/suggest-many?q=${encodeURI(query)}`
-    //       );
-    //       const result = await response.json();
-    //       setData(result);
-    //       // Store the data in local storage
-    //       localStorage.setItem("movieData", JSON.stringify(result));
-    //     } catch (error) {
-    //       console.error("Error fetching data:", error);
-    //     }
-    //   }
-    // };
-
-    // fetchData();
+    fetchData();
   }, [query]);
 
   // Load data from local storage on component mount
@@ -45,6 +31,7 @@ function MovieResult({ query }) {
       setData(JSON.parse(storedData));
     }
   }, []);
+  console.log(data);
 
   // const data = [
   //   {
@@ -157,18 +144,7 @@ function MovieResult({ query }) {
 
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {data.map((moviedata) => {
-              return (
-                <MovieItem
-                  key={moviedata.id}
-                  title={moviedata.title}
-                  genre={moviedata.genre_names.toString()}
-                  cover_image={moviedata.poster_url}
-                  external_link={moviedata.trailer_url}
-                  rating={moviedata.vote_average}
-                  overview={moviedata.overview}
-                  release_date={moviedata.release_date}
-                />
-              );
+              return <MovieItem key={moviedata.id} data={moviedata} />;
             })}
           </div>
         </div>

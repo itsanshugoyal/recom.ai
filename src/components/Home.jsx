@@ -1,19 +1,12 @@
-import React, { Suspense, useState } from "react";
-import BookResult from "./BookResult";
-import Hero from "./Hero";
-import MovieResult from "./MovieResult";
-import PodcastResult from "./PodcastResult";
-import BlogResult from "./BlogResult";
-import HomeResult from "./HomeResult";
-import Loader from "./Loader";
+import React, { Suspense, useRef, useState } from "react";
+import { Hero, BlogResult, HomeResult, Loader } from "../components";
 
 function Home() {
   const [query, setQuery] = useState("");
+  const homeResultRef = useRef(null);
+
   const handleClickScroll = () => {
-    const element = document.getElementById("homeResult");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    homeResultRef.current.scrollIntoView({ behavior: "smooth" });
   };
   return (
     <div>
@@ -27,7 +20,7 @@ function Home() {
       />
       {/* Result displayed after search */}
 
-      <div id="homeResult">
+      <div ref={homeResultRef}>
         <Suspense fallback={<Loader />}>
           <HomeResult query={query} />
         </Suspense>

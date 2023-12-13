@@ -1,5 +1,6 @@
 import React, { Suspense, useRef, useState } from "react";
 import { BookResult, Hero, BlogResult, Loader } from "../components";
+import { fetchData } from "../services/fetchdata";
 
 function Books() {
   const [query, setQuery] = useState("");
@@ -18,11 +19,17 @@ function Books() {
         booksQuery={setQuery}
         scrollToResult={handleClickScroll}
       />
-
       {/* Show Result after search */}
       <div ref={bookResultRef}>
-        <Suspense fallback={<Loader />}>
-          <BookResult query={query} />
+        <Suspense key={query} fallback={<Loader />}>
+          {query.trim() !== "" && (
+            <BookResult
+              query={query}
+              resource={fetchData(
+                `https://web-production-e62e.up.railway.app/books/suggest-many?q=${encodeURI(query)}`
+              )}
+            />
+          )}
         </Suspense>
       </div>
       {/* show books blog */}

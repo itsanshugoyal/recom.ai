@@ -1,36 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MovieItem } from "../components";
 
-function MovieResult({ query }) {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (query) {
-        try {
-          const response = await fetch(
-            `https://web-production-e62e.up.railway.app/movies/suggest-many?q=${encodeURI(query)}`
-          );
-          const result = await response.json();
-          setData(result);
-          // Store the data in local storage
-          localStorage.setItem("movieData", JSON.stringify(result));
-        } catch (error) {
-          console.error("Error fetching data:", error);
-        }
-      }
-    };
-
-    fetchData();
-  }, [query]);
-
-  // Load data from local storage on component mount
-  useEffect(() => {
-    const storedData = localStorage.getItem("movieData");
-    if (storedData) {
-      setData(JSON.parse(storedData));
-    }
-  }, []);
+function MovieResult({ query, resource }) {
+  const data = resource?.read();
   console.log(data);
 
   // const data = [
@@ -138,12 +110,11 @@ function MovieResult({ query }) {
   // console.log(data);
   return (
     <div>
-      {data.length > 0 && (
-        <div className="bg-white mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h1 className="font-bold text-5xl  left-0 text-left mx-2 mb-14">Movie-wisePicks</h1>
-
+      {data && data.length > 0 && (
+        <div className="bg-swhite mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+          <h1 className="font-bold text-4xl  left-0 text-left mx-2 mb-14">Showing movies recomendation for: {query}</h1>
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {data.map((moviedata) => {
+            {data?.map((moviedata) => {
               return <MovieItem key={moviedata.id} data={moviedata} />;
             })}
           </div>

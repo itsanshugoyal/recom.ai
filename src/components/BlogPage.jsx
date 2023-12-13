@@ -33,6 +33,9 @@ function BlogPage() {
       if (obj.underline) {
         modifiedText = <u key={index}>{text}</u>;
       }
+      if (obj.code) {
+        modifiedText = <code key={index}>{text}</code>;
+      }
     }
 
     switch (type) {

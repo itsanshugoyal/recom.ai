@@ -1,5 +1,6 @@
 import React, { useState, Suspense, useRef } from "react";
 import { Hero, MovieResult, BlogResult, Loader } from "../components";
+import { fetchData } from "../services/fetchdata";
 
 const Movies = () => {
   const [query, setQuery] = useState("");
@@ -21,14 +22,20 @@ const Movies = () => {
 
       {/* Show Result after search */}
       <div ref={movieResultRef}>
-        <Suspense fallback={<Loader />}>
-          <MovieResult query={query} />
-        </Suspense>
+        {query.trim() !== "" && (
+          <Suspense fallback={<Loader />}>
+            <MovieResult
+              query={query}
+              resource={fetchData(
+                `https://web-production-e62e.up.railway.app/movies/suggest-many?q=${encodeURI(query)}`
+              )}
+            />
+          </Suspense>
+        )}
       </div>
 
       {/* 2nd page */}
       {/* movies blog */}
-
       <BlogResult type={"Movies"} />
     </div>
   );

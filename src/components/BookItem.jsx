@@ -5,12 +5,8 @@ function BookItem({ data }) {
     <div>
       <div className="group relative shadow-inner rounded-lg">
         {/*1 image */}
-        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-          <img
-            src={data.cover_image_url}
-            alt={data.title}
-            className="h-full w-full object-fill object-center lg:h-full lg:w-full"
-          />
+        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 h-80 sm:h-40">
+          <img src={data.cover_image_url} alt={data.title} className="h-full w-full object-fill object-center " />
         </div>
 
         <div className="mt-4 flex justify-between group-hover:opacity-75">

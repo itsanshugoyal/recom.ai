@@ -1,12 +1,7 @@
-import React, { Suspense } from "react";
-import { Loader } from "../components";
+import React from "react";
 
 function Nopage() {
-  return (
-    <Suspense fallback={<Loader />}>
-      <div>Nopage</div>
-    </Suspense>
-  );
+  return <div className="w-full h-full">Nopage</div>;
 }
 
 export default Nopage;

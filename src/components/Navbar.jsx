@@ -11,10 +11,10 @@ function Navbar() {
     <div>
       {/* <!-- Navbar goes here --> */}
       <nav className="bg-white shadow-lg">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="  lg:mx-48 mx-auto">
           <div className="flex justify-between">
             <div className="flex space-x-7">
-              <div className="items-center justify-center flex">
+              <div className="overflow-hidden h-16 w-44 items-center justify-center flex">
                 {/* <!-- Website Logo --> */}
                 <NavLink
                   to="/"
@@ -23,12 +23,7 @@ function Navbar() {
                     (isActive ? "font-extrabold " : "font-bold")
                   }
                 >
-                  {/* <img
-                    src="./img/logo.png"
-                    alt=""
-                    className="left-8 top-0 overflow-hidden h-fit w-40 mr-2 bg-cover absolute bg-no-repeat"
-                  /> */}
-                  Recom.ai
+                  <img src="./img/logo.png" alt="" className=" w-auto h-44 mt-1" />
                 </NavLink>
               </div>
               {/* <!-- Primary Navbar items --> */}
@@ -90,7 +85,7 @@ function Navbar() {
               </NavLink>
             </div>
             {/* <!-- Mobile menu button --> */}
-            <div className="md:hidden flex items-center">
+            <div className="md:hidden flex items-center mx-4">
               <button className="outline-none mobile-menu-button" onClick={showMenu}>
                 <svg
                   className=" w-6 h-6 text-gray-800 hover:text-sky-900 "

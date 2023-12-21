@@ -5,23 +5,23 @@ function Footer() {
   return (
     <footer className=" rounded-lg shadow bg-gray-900 m-4">
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div className="sm:flex sm:items-center sm:justify-between">
+        <div className="sm:flex items-center sm:justify-between">
           <Link
             to="/"
-            className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse overflow-hidden h-16 w-44  "
+            className="mx-auto sm:m-0  mt-2 flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse overflow-hidden h-16 w-44  "
           >
             <img src="/img/logo.png" className="h-44 w-auto" alt="Recom AI Logo" />
             {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Recom AI</span> */}
           </Link>
-          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+          <ul className="grid grid-cols-2 sm:flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
             <li>
               <Link to="about" className="hover:underline me-4 md:me-6">
                 About
               </Link>
             </li>
             <li>
-              <Link to="/privacy" className="hover:underline me-4 md:me-6">
-                Privacy Policy
+              <Link to="/contact" className="hover:underline me-4 md:me-6">
+                Contact
               </Link>
             </li>
             <li>
@@ -30,8 +30,8 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:underline">
-                Contact
+              <Link to="/privacy" className="hover:underline me-4 md:me-6">
+                Privacy Policy
               </Link>
             </li>
           </ul>

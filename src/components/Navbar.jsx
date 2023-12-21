@@ -11,7 +11,7 @@ function Navbar() {
     <div>
       {/* <!-- Navbar goes here --> */}
       <nav className="bg-white shadow-lg">
-        <div className="  lg:mx-48 mx-auto">
+        <div className="  lg:mx-48 sm:mx-auto">
           <div className="flex justify-between">
             <div className="flex space-x-7">
               <div className="overflow-hidden h-16 w-44 items-center justify-center flex">

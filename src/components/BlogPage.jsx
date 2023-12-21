@@ -25,6 +25,13 @@ function BlogPage() {
       if (obj.bold) {
         modifiedText = <b key={index}>{text}</b>;
       }
+      if (obj.href) {
+        modifiedText = (
+          <a key={index} href={obj.href} target="_blank">
+            {text}
+          </a>
+        );
+      }
 
       if (obj.italic) {
         modifiedText = <em key={index}>{text}</em>;
@@ -36,12 +43,18 @@ function BlogPage() {
       if (obj.code) {
         modifiedText = <code key={index}>{text}</code>;
       }
+      if (obj.pre) {
+        modifiedText = <pre index={index}>{text}</pre>;
+      } else {
+        // modifiedText = <pre key={index}>{text}</pre>;
+        console.log(obj);
+      }
     }
 
     switch (type) {
       case "heading-three":
         return (
-          <h3 key={index} className="text-xl font-semibold mb-4">
+          <h3 key={index} className="text-3xl font-semibold my-4">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
@@ -57,14 +70,40 @@ function BlogPage() {
         );
       case "heading-four":
         return (
-          <h4 key={index} className="text-md font-semibold mb-4">
+          <h4 key={index} className="text-2xl font-semibold my-4 ">
             {modifiedText.map((item, i) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))}
           </h4>
         );
+      case "heading-one":
+        return (
+          <h1 key={index} className="text-3xl font-semibold my-4 ">
+            {modifiedText.map((item, i) => (
+              <React.Fragment key={i}>{item}</React.Fragment>
+            ))}
+          </h1>
+        );
       case "image":
         return <img key={index} alt={obj.title} height={obj.height} width={obj.width} src={obj.src} />;
+      case "code-block":
+        return (
+          <pre className="border border-collapse whitespace-pre-wrap px-8 py-3 mb-8">
+            <code key={index} className="mb-4 font-medium  ">
+              {modifiedText.map((item, i) => (
+                <React.Fragment key={i}>{item}</React.Fragment>
+              ))}
+            </code>
+          </pre>
+        );
+      case "link":
+        return (
+          <a key={index} href={obj.href} target="_blank" className="underline">
+            {modifiedText.map((item, i) => (
+              <React.Fragment key={i}>{item}</React.Fragment>
+            ))}
+          </a>
+        );
       default:
         return modifiedText;
     }
@@ -80,8 +119,8 @@ function BlogPage() {
         siteUrl={`https://blog.mohitsojitra.tech/blog/${blog.data.slug}`}
         previewImage={`https://blog.mohitsojitra.tech/blog/${blog.data.slug}/${blog.data.blogImage}`}
       /> */}
-        <main className="w-full flex flex-col  flex-1 items-center pt-28 bg-[#EEF0F2]">
-          <div className="w-3/5 ">
+        <main className="w-full flex flex-col  flex-1 m-auto pt-28 bg-[#EEF0F2]">
+          <div className="w-3/5 items-start justify-start text-left mx-auto bg-white p-16 my-10">
             {/* Header */}
 
             <div className=" w-full border-b-4 border-yellow-500 dark:border-yellow-400 mb-4">
@@ -97,7 +136,7 @@ function BlogPage() {
             </div>
             {/* Mdx */}
             <div className="w-full">
-              <article className="prose lg:prose-lg py-7 dark:prose-dark max-w-full">
+              <article className="prose text-lg lg:prose-lg  py-7 dark:prose-dark max-w-full">
                 {postDetail.content.raw.children.map((typeObj, index) => {
                   const children = typeObj.children.map((item, itemIndex) =>
                     getContentFragment(itemIndex, item.text, item)

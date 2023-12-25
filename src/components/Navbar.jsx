@@ -14,16 +14,20 @@ function Navbar() {
       <div className="  lg:mx-48 sm:mx-auto">
         <div className="flex justify-between">
           <div className="flex space-x-7">
-            <div className="overflow-hidden h-16 w-44 items-center justify-center flex">
+            <div className="overflow-hidden items-center justify-center flex p-3 ">
               {/* <!-- Website Logo --> */}
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  "py-4 px-2   text-gray-800 text-xl   hover:text-blue-900 " +
+                  "py-4 px-2   text-gray-800 text-xl   hover:text-blue-900 aspect-h-1 aspect-w-2 overflow-hidden group-hover:opacity-75  h-16 w-48 " +
                   (isActive ? "font-extrabold " : "font-bold")
                 }
               >
-                <img src="./img/logo.png" alt="logo" className=" w-auto h-44 mt-1" />
+                <img
+                  src="./img/logo.png"
+                  alt="logo"
+                  className="mt-1 h-full w-full object-cover object-center lg:h-full lg:w-full"
+                />
               </NavLink>
             </div>
             {/* <!-- Primary Navbar items --> */}

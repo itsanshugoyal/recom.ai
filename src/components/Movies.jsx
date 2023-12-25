@@ -11,7 +11,7 @@ const Movies = () => {
   };
 
   return (
-    <div>
+    <main>
       <Hero
         category={"Movies"}
         howto={" to watch"}
@@ -21,7 +21,7 @@ const Movies = () => {
       />
 
       {/* Show Result after search */}
-      <div ref={movieResultRef}>
+      <section ref={movieResultRef}>
         {query.trim() !== "" && (
           <Suspense fallback={<Loader />}>
             <MovieResult
@@ -32,12 +32,12 @@ const Movies = () => {
             />
           </Suspense>
         )}
-      </div>
+      </section>
 
       {/* 2nd page */}
       {/* movies blog */}
       <BlogResult type={"Movies"} />
-    </div>
+    </main>
   );
 };
 

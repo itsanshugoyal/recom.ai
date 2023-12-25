@@ -11,7 +11,7 @@ function Books() {
   };
 
   return (
-    <div>
+    <main>
       <Hero
         category={"Books"}
         howto={" to read"}
@@ -20,7 +20,7 @@ function Books() {
         scrollToResult={handleClickScroll}
       />
       {/* Show Result after search */}
-      <div ref={bookResultRef}>
+      <section ref={bookResultRef}>
         <Suspense key={query} fallback={<Loader />}>
           {query.trim() !== "" && (
             <BookResult
@@ -31,10 +31,10 @@ function Books() {
             />
           )}
         </Suspense>
-      </div>
+      </section>
       {/* show books blog */}
       <BlogResult type={"Books"} />
-    </div>
+    </main>
   );
 }
 

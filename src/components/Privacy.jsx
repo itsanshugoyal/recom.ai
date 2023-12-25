@@ -2,7 +2,7 @@ import React from "react";
 
 function Privacy() {
   return (
-    <div classNameName="h-full bg-[#EEF0F2] ">
+    <main classNameName="h-full bg-[#EEF0F2] ">
       <div className="items-start m-auto md:w-2/4 justify-start flex px-12">
         <div className="container my-8 text-left text-lg">
           <h1 className="my-4 font-extrabold text-4xl">Privacy Policy</h1>
@@ -427,7 +427,7 @@ function Privacy() {
           </ul>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

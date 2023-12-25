@@ -5,7 +5,7 @@ function Podcasts() {
   const [query, setQuery] = useState("");
 
   return (
-    <div>
+    <main>
       <Hero category={"Podcasts"} howto={" to listen"} herobg={"url('./img/podcastbg.png')"} podcastsQuery={setQuery} />
 
       {/* Show Result after search */}
@@ -13,7 +13,7 @@ function Podcasts() {
 
       {/* show podcasts blog */}
       <BlogResult type={"Podcasts"} />
-    </div>
+    </main>
   );
 }
 

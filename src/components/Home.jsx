@@ -10,7 +10,7 @@ function Home() {
     homeResultRef.current.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <div>
+    <main>
       <Hero
         homehead={"Bored? Get perfect Recomendation and"}
         category={" your Interest "}
@@ -20,7 +20,7 @@ function Home() {
         scrollToResult={handleClickScroll}
       />
       {/* Result displayed after search */}
-      <div ref={homeResultRef}>
+      <section ref={homeResultRef}>
         <Suspense fallback={<Loader />}>
           {query.trim() !== "" && (
             <HomeResult
@@ -34,11 +34,11 @@ function Home() {
             />
           )}
         </Suspense>
-      </div>
+      </section>
 
       {/* blog of all categories */}
       <BlogResult />
-    </div>
+    </main>
   );
 }
 

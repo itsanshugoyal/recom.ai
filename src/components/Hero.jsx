@@ -32,7 +32,7 @@ function Hero({
   }
 
   return (
-    <div
+    <section
       className="relative h-screen overflow-hidden bg-no-repeat bg-cover"
       style={{
         backgroundPosition: "50%",
@@ -49,7 +49,9 @@ function Hero({
         <div className="flex justify-center items-center h-full">
           <div className="text-center text-white px-6 md:px-12 sm:w-11/12 w-full">
             <div className="mb-12">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">{homehead}</h1>
+              <h1 aria-label="Get Recomendation" className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+                {homehead}
+              </h1>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight ">
                 Find <span className="text-sky-900">{category}</span>
                 {howto}
@@ -78,7 +80,7 @@ function Hero({
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

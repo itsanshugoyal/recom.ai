@@ -32,7 +32,7 @@ function BlogItem({ post }) {
 
           <div className="px-2">
             {/* title */}
-            <h3 className=" text-gray-700 my-2 font-extrabold text-2xl">
+            <h3 aria-label="post heading" className=" text-gray-700 my-2 font-extrabold text-2xl">
               <span aria-hidden="true" className="   line-clamp-2 h-16">
                 {post.title}
               </span>

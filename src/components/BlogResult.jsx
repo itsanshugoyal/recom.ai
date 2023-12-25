@@ -21,7 +21,7 @@ function BlogResult({ type }) {
   const filteredData = type ? posts.filter((item) => item.node.categories[0].name === type) : posts;
 
   return (
-    <div className="bg-[#EEF0F2] ">
+    <section className="bg-[#EEF0F2] ">
       {filteredData.length > 0 && (
         <div className=" mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <h2 className="font-bold text-4xl  left-0 text-left mx-2 mb-14   ">Wise-recoms</h2>
@@ -33,7 +33,7 @@ function BlogResult({ type }) {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 }
 

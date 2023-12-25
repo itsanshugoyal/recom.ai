@@ -109,46 +109,45 @@ function BlogPage() {
     }
   };
 
-  console.log(postDetail);
-  return (
-    postDetail && (
-      <div>
-        {/* <MetaTag
+  /* <MetaTag
         title={blog.data.title}
         description={blog.data.description}
         siteUrl={`https://blog.mohitsojitra.tech/blog/${blog.data.slug}`}
         previewImage={`https://blog.mohitsojitra.tech/blog/${blog.data.slug}/${blog.data.blogImage}`}
-      /> */}
-        <main className="w-full flex flex-col  flex-1 m-auto pt-28 bg-[#EEF0F2]">
-          <div className="w-3/5 items-start justify-start text-left mx-auto bg-white p-16 my-10">
-            {/* Header */}
+      /> */
 
-            <div className=" w-full border-b-4 border-yellow-500 dark:border-yellow-400 mb-4">
-              <img
-                className="object-contain w-full h-72 m-4 rounded-lg"
-                src={postDetail.coverImage.url}
-                alt={postDetail.title}
-              />
-              <p className="text-3xl p-4 font-bold text-center mb-4 text-black dark:text-gray-50">{postDetail.title}</p>
-              {/* <p className="text-3xl p-4 font-bold text-center mb-4 dark:text-gray-50">{blog.data.title}</p> */}
-              {/* <UserCard blog={blog} /> */}
-              <div className="mb-4" />
-            </div>
-            {/* Mdx */}
-            <div className="w-full">
-              <article className="prose text-lg lg:prose-lg  py-7 dark:prose-dark max-w-full">
-                {postDetail.content.raw.children.map((typeObj, index) => {
-                  const children = typeObj.children.map((item, itemIndex) =>
-                    getContentFragment(itemIndex, item.text, item)
-                  );
+  console.log(postDetail);
+  return (
+    postDetail && (
+      <main className="w-full flex flex-col  flex-1 m-auto pt-28 bg-[#EEF0F2]">
+        <div className="w-3/5 items-start justify-start text-left mx-auto bg-white p-16 my-10">
+          {/* Header */}
 
-                  return getContentFragment(index, children, typeObj, typeObj.type);
-                })}
-              </article>
-            </div>
+          <div className=" w-full border-b-4 border-yellow-500 dark:border-yellow-400 mb-4">
+            <img
+              className="object-contain w-full h-72 m-4 rounded-lg"
+              src={postDetail.coverImage.url}
+              alt={postDetail.title}
+            />
+            <p className="text-3xl p-4 font-bold text-center mb-4 text-black dark:text-gray-50">{postDetail.title}</p>
+            {/* <p className="text-3xl p-4 font-bold text-center mb-4 dark:text-gray-50">{blog.data.title}</p> */}
+            {/* <UserCard blog={blog} /> */}
+            <div className="mb-4" />
           </div>
-        </main>
-      </div>
+          {/* Mdx */}
+          <div className="w-full">
+            <article className="prose text-lg lg:prose-lg  py-7 dark:prose-dark max-w-full">
+              {postDetail.content.raw.children.map((typeObj, index) => {
+                const children = typeObj.children.map((item, itemIndex) =>
+                  getContentFragment(itemIndex, item.text, item)
+                );
+
+                return getContentFragment(index, children, typeObj, typeObj.type);
+              })}
+            </article>
+          </div>
+        </div>
+      </main>
     )
   );
 }

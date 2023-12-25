@@ -1,7 +1,7 @@
 import React from "react";
 
 function Contact() {
-  return <div className="w-full h-full">Contact</div>;
+  return <main className="w-full h-full">Contact</main>;
 }
 
 export default Contact;

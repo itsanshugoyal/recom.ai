@@ -55,7 +55,7 @@ function Hero({
                 {howto}
               </h1>
             </div>
-            <h3 className="font-semibold text-xl"> Discover {category} with the power of AI</h3>
+            <p className="font-semibold text-xl"> Discover {category} with the power of AI</p>
             <form onSubmit={submit}>
               <div className="mt-4 flex gap-2 max-md:flex-col mx-auto items-center justify-center text-center text-zinc-50 px-6 md:px-12">
                 <input

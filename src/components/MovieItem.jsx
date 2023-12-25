@@ -37,7 +37,7 @@ function MovieItem({ data }) {
         <div className="px-2">
           {/* title */}
           <h3 className=" text-gray-700 my-2 font-extrabold text-lg">
-            <a href={data.trailer_url}>
+            <a href={data.trailer_url} target="_blank">
               <span aria-hidden="true" className="absolute inset-0 flex" />
               {data.title}
             </a>
@@ -55,7 +55,7 @@ function MovieItem({ data }) {
             {/* any link */}
             <a
               href={data.trailer_url}
-              target="blank"
+              target="_blank"
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-sky-700 rounded-lg hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800"
             >
               Trailer

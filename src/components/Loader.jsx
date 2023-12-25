@@ -4,7 +4,7 @@ function Loader() {
   console.log("Loader component rendered");
   return (
     <div className="items-centerflex">
-      <h5 className="font-bold text-3xl  left-0 text-center mx-2 my-7">Fetching recomendations...</h5>
+      <h2 className="font-bold text-3xl  left-0 text-center mx-2 my-7">Fetching recomendations...</h2>
 
       <div className="h-[34rem] justify-center items-center flex">
         <div className="lds-ripple">

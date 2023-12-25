@@ -129,7 +129,6 @@ function Navbar() {
           </ul>
         </div>
       </nav>
-      {/* <h1 className="text-sky-900 text-2xl md:text-3xl lg:text-4xl font-bold p-4">Tailwind Navigation Toolbar</h1> */}
     </div>
   );
 }

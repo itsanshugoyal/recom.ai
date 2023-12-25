@@ -5,7 +5,7 @@ function Terms() {
     <div classNameName="h-full bg-[#EEF0F2] ">
       <div className="items-start m-auto md:w-2/4 justify-start flex px-12">
         <div className="container my-8 text-left text-lg">
-          <h2 className="my-4 font-extrabold text-4xl">Terms and Conditions</h2>
+          <h1 className="my-4 font-extrabold text-4xl">Terms and Conditions</h1>
 
           <p className="my-2 text-gray-600 text-xl italic font-medium">Welcome to Recom Ai!</p>
 
@@ -31,9 +31,9 @@ function Terms() {
             interchangeable and therefore as referring to same.
           </p>
 
-          <h3 className="text-xl font-bold my-6">
+          <h2 className="text-xl font-bold my-6">
             <strong>Cookies</strong>
-          </h3>
+          </h2>
 
           <p className="my-2 text-gray-600">
             We employ the use of cookies. By accessing Recom Ai, you agreed to use cookies in agreement with the Recom
@@ -46,9 +46,9 @@ function Terms() {
             website. Some of our affiliate/advertising partners may also use cookies.
           </p>
 
-          <h3 className="text-xl font-bold my-6">
+          <h2 className="text-xl font-bold my-6">
             <strong>License</strong>
-          </h3>
+          </h2>
 
           <p className="my-2 text-gray-600">
             Unless otherwise stated, Recom Ai and/or its licensors own the intellectual property rights for all material
@@ -110,9 +110,9 @@ function Terms() {
             reproduce and edit any of your Comments in any and all forms, formats or media.
           </p>
 
-          <h3 className="text-xl font-bold my-6">
+          <h2 className="text-xl font-bold my-6">
             <strong>Hyperlinking to our Content</strong>
-          </h3>
+          </h2>
 
           <p className="my-2 text-gray-600">
             The following organizations may link to our Website without prior written approval:
@@ -189,18 +189,18 @@ function Terms() {
             No use of Recom Ai's logo or other artwork will be allowed for linking absent a trademark license agreement.
           </p>
 
-          <h3 className="text-xl font-bold my-6">
+          <h2 className="text-xl font-bold my-6">
             <strong>iFrames</strong>
-          </h3>
+          </h2>
 
           <p className="my-2 text-gray-600">
             Without prior approval and written permission, you may not create frames around our Webpages that alter in
             any way the visual presentation or appearance of our Website.
           </p>
 
-          <h3 className="text-xl font-bold my-6">
+          <h2 className="text-xl font-bold my-6">
             <strong>Content Liability</strong>
-          </h3>
+          </h2>
 
           <p className="my-2 text-gray-600">
             We shall not be hold responsible for any content that appears on your Website. You agree to protect and
@@ -209,9 +209,9 @@ function Terms() {
             the infringement or other violation of, any third party rights.
           </p>
 
-          <h3 className="text-xl font-bold my-6">
+          <h2 className="text-xl font-bold my-6">
             <strong>Reservation of Rights</strong>
-          </h3>
+          </h2>
 
           <p className="my-2 text-gray-600">
             We reserve the right to request that you remove all links or any particular link to our Website. You approve
@@ -220,9 +220,9 @@ function Terms() {
             bound to and follow these linking terms and conditions.
           </p>
 
-          <h3 className="text-xl font-bold my-6">
+          <h2 className="text-xl font-bold my-6">
             <strong>Removal of links from our website</strong>
-          </h3>
+          </h2>
 
           <p className="my-2 text-gray-600">
             If you find any link on our Website that is offensive for any reason, you are free to contact and inform us
@@ -236,9 +236,9 @@ function Terms() {
             is kept up to date.
           </p>
 
-          <h3 className="text-xl font-bold my-6">
+          <h2 className="text-xl font-bold my-6">
             <strong>Disclaimer</strong>
-          </h3>
+          </h2>
 
           <p className="my-2 text-gray-600">
             To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions

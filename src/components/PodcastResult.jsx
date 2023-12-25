@@ -30,7 +30,7 @@ function PodcastResult({ query }) {
     <div>
       {data.length > 0 && (
         <div className="bg-white mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8" ref={ref}>
-          <h1 className="font-bold text-5xl  left-0 text-left mx-2 mb-14   ">Podcast-wisePicks</h1>
+          <h2 className="font-bold text-5xl  left-0 text-left mx-2 mb-14   ">Podcast-wisePicks</h2>
 
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {data.map((podcastdata) => {

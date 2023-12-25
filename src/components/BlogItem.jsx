@@ -14,11 +14,11 @@ function BlogItem({ post }) {
         {/* <Link to={`/blog/${encodeURI(blog)}`}> */}
         <div className="group relative shadow-xl rounded-lg pb-4 bg-white">
           {/*1 image */}
-          <div className="p-3 aspect-h-1 aspect-w-1 w-full overflow-hidden bg-slate-50 lg:aspect-none group-hover:opacity-75 lg:h-52 h-36">
+          <div className="p-3 aspect-h-1 aspect-w-1 w-full overflow-hidden bg-slate-50 group-hover:opacity-75 lg:h-52 h-36">
             <img
               src={post.coverImage.url}
               alt={post.title}
-              className="h-full w-full object-fill object-center lg:h-full lg:w-full rounded-sm "
+              className="h-full w-full object-fill p-3 object-center lg:h-full lg:w-full rounded-sm "
             />
           </div>
 

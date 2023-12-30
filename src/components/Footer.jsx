@@ -46,10 +46,10 @@ function Footer() {
           <a className="hover:underline" href="https://www.linkedin.com/in/sriramarkk/" target="_blank">
             Sriram
           </a>
-          {/* and{" "} */}
-          {/* <a className="hover:underline" href="https://www.linkedin.com/in/sriramarkk/" target="_blank">
+          {/* <br /> */} with support from{" "}
+          <a className="hover:underline" href="https://www.linkedin.com/in/dcubix-solutions/" target="_blank">
             Dcubix team
-          </a> */}
+          </a>
         </span>
         <span className="block text-sm text-gray-400 sm:text-center dark:text-gray-400">
           © 2023 &nbsp;

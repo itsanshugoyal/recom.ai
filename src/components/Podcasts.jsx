@@ -6,7 +6,12 @@ function Podcasts() {
 
   return (
     <main>
-      <Hero category={"Podcasts"} howto={" to listen"} herobg={"url('./img/podcastbg.png')"} podcastsQuery={setQuery} />
+      <Hero
+        category={"Podcasts"}
+        howto={" to listen"}
+        herobg={"url('./img/podcastbg.webp')"}
+        podcastsQuery={setQuery}
+      />
 
       {/* Show Result after search */}
       <PodcastResult query={query} />

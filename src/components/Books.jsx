@@ -15,7 +15,7 @@ function Books() {
       <Hero
         category={"Books"}
         howto={" to read"}
-        herobg={"url('./img/books2.png')"}
+        herobg={"url('./img/books2.webp')"}
         booksQuery={setQuery}
         scrollToResult={handleClickScroll}
       />

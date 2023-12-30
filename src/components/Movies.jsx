@@ -15,7 +15,7 @@ const Movies = () => {
       <Hero
         category={"Movies"}
         howto={" to watch"}
-        herobg={"url('./img/moviesbg.png')"}
+        herobg={"url('./img/moviesbg.webp')"}
         moviesQuery={setQuery}
         scrollToResult={handleClickScroll}
       />

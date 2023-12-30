@@ -1,7 +1,13 @@
 import React, { Suspense, useRef, useState } from "react";
 import { Hero, BlogResult, HomeResult, Loader } from "../components";
 import { fetchData } from "../services/fetchdata";
+// .home-bg {
+//   background-image: url('assets/img/home-header.jpg')  /* default */
+// }
 
+// .webp .home-bg {
+//   background-image: url(assets/img/home-header.webp')
+// }
 function Home() {
   const [query, setQuery] = useState("");
   const homeResultRef = useRef(null);
@@ -15,7 +21,7 @@ function Home() {
         homehead={"Bored? Get perfect Recomendation and"}
         category={" your Interest "}
         howto={"to watch!"}
-        herobg={"url('./img/books2.png')"}
+        herobg={"url('./img/books2.webp')"}
         homeQuery={setQuery}
         scrollToResult={handleClickScroll}
       />

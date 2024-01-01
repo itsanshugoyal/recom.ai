@@ -24,7 +24,7 @@ function Navbar() {
                 }
               >
                 <img
-                  src="./img/logo.png"
+                  src="./img/logo.webp"
                   alt="logo"
                   className="mt-1 h-full w-full object-cover object-center lg:h-full lg:w-full"
                 />

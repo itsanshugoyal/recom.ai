@@ -8,13 +8,13 @@ function Footer() {
         <div className="sm:flex items-center sm:justify-between">
           <Link
             to="/"
-            className="mx-auto sm:m-0  mt-2 flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse overflow-hidden h-16 w-44  "
+            className="mx-auto sm:m-0  mt-4 flex items-center mb-4  sm:mb-0 space-x-3 rtl:space-x-reverse overflow-hidden h-16 w-44  "
           >
-            <img src="/img/logo.png" className="h-44 w-auto" alt="Recom AI Logo" />
+            <img src="/img/logo.webp" className="h-44 w-auto" alt="Recom AI Logo" />
             {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Recom AI</span> */}
           </Link>
-          <ul className="grid grid-cols-2 sm:flex flex-wrap items-center mb-6 text-sm font-medium text-gray-300 sm:mb-0 dark:text-gray-300">
-            <li>
+          <ul className="grid grid-cols-2 gap-2 sm:flex flex-wrap items-center mb-6 text-sm font-medium text-gray-300 sm:mb-0 dark:text-gray-300">
+            <li className="m-2">
               <Link to="about" className="hover:underline me-4 md:me-6">
                 About
               </Link>

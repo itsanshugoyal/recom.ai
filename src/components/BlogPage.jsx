@@ -120,7 +120,7 @@ function BlogPage() {
   return (
     postDetail && (
       <main className="w-full flex flex-col  flex-1 m-auto pt-28 bg-[#EEF0F2]">
-        <div className="w-3/5 items-start justify-start text-left mx-auto bg-white p-16 my-10">
+        <div className="w-11/12 sm:w-5/6 lg:w-8/12 items-start justify-start text-left mx-auto bg-white p-8 sm:p-16 my-10">
           {/* Header */}
 
           <div className=" w-full border-b-4 border-yellow-500 dark:border-yellow-400 mb-4">
@@ -129,7 +129,7 @@ function BlogPage() {
               src={postDetail.coverImage.url}
               alt={postDetail.title}
             />
-            <p className="text-3xl p-4 font-bold text-center mb-4 text-black dark:text-gray-50">{postDetail.title}</p>
+            <p className="text-3xl p-4 font-bold text-center mb-4 text-black dark:text-gray-600">{postDetail.title}</p>
             {/* <p className="text-3xl p-4 font-bold text-center mb-4 dark:text-gray-50">{blog.data.title}</p> */}
             {/* <UserCard blog={blog} /> */}
             <div className="mb-4" />

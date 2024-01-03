@@ -18,7 +18,7 @@ function BlogResult({ type }) {
 
     fetchData();
   }, []);
-  const filteredData = type ? posts.filter((item) => item.node.categories[0].name === type) : posts;
+  const filteredData = type ? posts.filter((item) => item.node.categories[0]?.name === type) : posts;
 
   return (
     <section className="bg-[#EEF0F2] ">

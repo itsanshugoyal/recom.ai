@@ -25,7 +25,7 @@ function BlogItem({ post }) {
           <div className="mt-4 px-3 flex justify-between group-hover:opacity-75">
             {/* type */}
 
-            <p className="text-sm text-left ml-2 font-medium text-gray-700">#{post.categories[0]?.name}</p>
+            <p className="text-sm text-left ml-2 font-medium text-gray-700">#{post.categories[0].name}</p>
             <p className="text-sm text-gray-700 font-medium">{date}</p>
           </div>
           {/* year */}

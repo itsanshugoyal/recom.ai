@@ -64,6 +64,13 @@ export const getPostDetails = async (slug) => {
           name
           slug
         }
+        seoOverride {
+          title
+          image {
+            url
+          }
+          description
+        }
       }
     }
   `;

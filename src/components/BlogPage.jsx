@@ -117,10 +117,10 @@ function BlogPage() {
         siteUrl={`https://blog.mohitsojitra.tech/blog/${blog.data.slug}`}
         previewImage={`https://blog.mohitsojitra.tech/blog/${blog.data.slug}/${blog.data.blogImage}`}
       /> */
-  console.log(postDetail);
   return (
     postDetail && (
       <main className="w-full flex flex-col  flex-1 m-auto pt-28 bg-[#EEF0F2]">
+        {/* meta data */}
         <Helmet>
           <title>{postDetail.seoOverride.title}</title>
           <meta name="description" content={postDetail.seoOverride.description} />
@@ -128,14 +128,16 @@ function BlogPage() {
           <meta name="author" content={postDetail.author.name} />
           <meta property="og:title" content={postDetail.seoOverride.title} />
           <meta property="og:description" content={postDetail.seoOverride.description} />
-          {/* <meta property="og:image" content={postDetail.seoOverride.image.url} /> */}
-          {/* <meta property="og:url" content="https://example.com/my-page" /> */}
+          <meta property="og:image" content={postDetail.seoOverride.image?.url} />
+          <meta property="og:url" content="https://example.com/my-page" />
           <meta name="twitter:title" content={postDetail.seoOverride.title} />
           <meta name="twitter:description" content={postDetail.seoOverride.description} />
           {/* <meta name="twitter:image" content={postDetail.seoOverride.image.url} /> */}
           {/* <meta name="twitter:card" content="summary_large_image" /> */}
         </Helmet>
-        <div className="w-11/12 sm:w-5/6 lg:w-8/12 items-start justify-start text-left mx-auto bg-white p-8 sm:p-16 my-10">
+
+        {/* Main content */}
+        <div className="w-11/12 sm:w-5/6 lg:w-7/12 items-start justify-start text-left mx-auto bg-white p-8 sm:p-16 my-10">
           {/* Header */}
           <div className=" w-full border-b-4 border-yellow-500 dark:border-yellow-400 mb-4">
             <img
@@ -143,7 +145,7 @@ function BlogPage() {
               src={postDetail.coverImage.url}
               alt={postDetail.title}
             />
-            <p className="text-3xl p-4 font-bold text-center mb-4 text-black dark:text-gray-600">{postDetail.title}</p>
+            <p className="text-4xl p-4 font-bold text-center mb-4 text-black dark:text-gray-600">{postDetail.title}</p>
             {/* <p className="text-3xl p-4 font-bold text-center mb-4 dark:text-gray-50">{blog.data.title}</p> */}
             {/* <UserCard blog={blog} /> */}
             <div className="mb-4" />
@@ -159,7 +161,33 @@ function BlogPage() {
 
                 return getContentFragment(index, children, typeObj, typeObj.type);
               })} */}
-              <RichText content={postDetail.content.raw} />
+              <RichText
+                content={postDetail.content.raw}
+                renderers={{
+                  h1: ({ children }) => <h1 className="text-4xl font-semibold my-4">{children}</h1>,
+                  h2: ({ children }) => <h2 className="text-3xl font-medium mt-4 mb-7">{children}</h2>,
+                  h3: ({ children }) => <h3 className="text-[26px] leading-8 font-medium mt-3 mb-6">{children}</h3>,
+                  h4: ({ children }) => <h4 className="text-2xl font-medium my-2">{children}</h4>,
+                  a: ({ children, href }) => (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className=" text-sky-800 hover:text-teal-400 font-medium"
+                    >
+                      {children}
+                    </a>
+                  ),
+                  code: ({ children }) => <h4 className="text-red-300">{children}</h4>,
+
+                  p: ({ children }) => <p className="mb-6 text-slate-800 leading-relaxed text-[19px]">{children}</p>,
+                  code_block: ({ children }) => (
+                    <pre className="border bg-blue-900 border-collapse whitespace-pre-wrap px-8 py-3 mb-8">
+                      <code className="text-slate-300">{children}</code>
+                    </pre>
+                  ),
+                }}
+              />
             </article>
           </div>
         </div>

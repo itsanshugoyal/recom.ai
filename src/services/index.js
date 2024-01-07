@@ -70,6 +70,7 @@ export const getPostDetails = async (slug) => {
             url
           }
           description
+          keywords
         }
       }
     }

@@ -45,8 +45,8 @@ function Privacy() {
             </li>
             <li>
               <p className="my-2 text-gray-600">
-                <strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot;
-                or &quot;Our&quot; in this Agreement) refers to Recom.ai, Jalandhar.
+                <strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;Recommend Me Something&quot;, &quot;We&quot;, &quot;Us&quot;
+                or &quot;Our&quot; in this Agreement) refers to Recommend me something, Jalandhar.
               </p>
             </li>
             <li>

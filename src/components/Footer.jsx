@@ -10,8 +10,8 @@ function Footer() {
             to="/"
             className="mx-auto sm:m-0  mt-4 flex items-center mb-4  sm:mb-0 space-x-3 rtl:space-x-reverse overflow-hidden h-16 w-44  "
           >
-            <img src="/img/logo.webp" className="h-44 w-auto" alt="Recom AI Logo" />
-            {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Recom AI</span> */}
+            <img src="/img/logo.webp" className="h-44 w-auto" alt="Recommend me something Logo" />
+            {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Recommend me something AI</span> */}
           </Link>
           <ul className="grid grid-cols-2 gap-2 sm:flex flex-wrap items-center mb-6 text-sm font-medium text-gray-300 sm:mb-0 dark:text-gray-300">
             <li className="m-2">
@@ -54,7 +54,7 @@ function Footer() {
         <span className="block text-sm text-gray-400 sm:text-center dark:text-gray-400">
           © 2023 &nbsp;
           <Link to="#" className="hover:underline">
-            Recom AI™
+            RecommendMeSomething™
           </Link>
           . All Rights Reserved.
         </span>

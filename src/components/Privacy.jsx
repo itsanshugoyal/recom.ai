@@ -94,9 +94,9 @@ function Privacy() {
             </li>
             <li>
               <p className="my-2 text-gray-600">
-                <strong>Website</strong> refers to Recom ai, accessible from{" "}
-                <a href="https://recomai.netlify.app/" rel="external nofollow noopener" target="_blank">
-                  https://recomai.netlify.app/
+                <strong>Website</strong> refers to Recommend Me Something, accessible from{" "}
+                <a href="https://recommendmesomething.com" rel="external nofollow noopener" target="_blank">
+                https://recommendmesomething.com
                 </a>
               </p>
             </li>

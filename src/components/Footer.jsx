@@ -46,7 +46,7 @@ function Footer() {
           <a className="hover:underline" href="https://www.linkedin.com/in/sriramarkk/" target="_blank">
             Sriram
           </a>
-          {/* <br /> */} hosted by{" "}
+          {/* <br /> */} and hosted by{" "}
           <a className="hover:underline" href="https://www.linkedin.com/in/dcubix-solutions/" target="_blank">
             Dcubix 
           </a>

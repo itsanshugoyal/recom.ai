@@ -38,7 +38,7 @@ function Footer() {
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <span className="block text-sm text-gray-400 sm:text-center dark:text-gray-400 mb-1">
-          A project by{" "}
+          By{" "}
           <a className="hover:underline" href="https://www.linkedin.com/in/anshu--goyal/" target="_blank">
             Anshu Goyal
           </a>{" "}
@@ -46,9 +46,9 @@ function Footer() {
           <a className="hover:underline" href="https://www.linkedin.com/in/sriramarkk/" target="_blank">
             Sriram
           </a>
-          {/* <br /> */} with support from{" "}
+          {/* <br /> */} hosted by{" "}
           <a className="hover:underline" href="https://www.linkedin.com/in/dcubix-solutions/" target="_blank">
-            Dcubix team
+            Dcubix 
           </a>
         </span>
         <span className="block text-sm text-gray-400 sm:text-center dark:text-gray-400">

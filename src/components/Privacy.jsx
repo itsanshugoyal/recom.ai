@@ -45,8 +45,9 @@ function Privacy() {
             </li>
             <li>
               <p className="my-2 text-gray-600">
-                <strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot;
-                or &quot;Our&quot; in this Agreement) refers to Recom.ai, Jalandhar.
+                <strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;Recommend Me
+                Something&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to
+                Recommend me something, Jalandhar.
               </p>
             </li>
             <li>
@@ -94,9 +95,9 @@ function Privacy() {
             </li>
             <li>
               <p className="my-2 text-gray-600">
-                <strong>Website</strong> refers to Recom ai, accessible from{" "}
-                <a href="https://recomai.netlify.app/" rel="external nofollow noopener" target="_blank">
-                  https://recomai.netlify.app/
+                <strong>Website</strong> refers to Recommend Me Something, accessible from{" "}
+                <a href="https://recommendmesomething.com" rel="external nofollow noopener" target="_blank">
+                  https://recommendmesomething.com
                 </a>
               </p>
             </li>

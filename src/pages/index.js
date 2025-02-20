@@ -1,0 +1,13 @@
+export { default as About } from "./About";
+export { default as Books } from "./Books";
+export { default as Home } from "./Home";
+export { default as Movies } from "./Movies";
+export { default as Nopage } from "./Nopage";
+export { default as Podcasts } from "./Podcasts";
+export { default as Contact } from "./Contact";
+export { default as Newsletter } from "./Newsletter";
+export { default as Feedback } from "./Feedback";
+export { default as Privacy } from "./Privacy";
+export { default as SignUp } from "./SignUp";
+export { default as SignIn } from "./SignIn";
+export { default as Terms } from "./Terms";
